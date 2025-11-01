@@ -528,7 +528,7 @@
 
 #### 发表对档口的评论
 
-- **路径：/api/food/getStallCommentList**
+- **路径：/api/food/createStallComment**
 
 - **是否需要token：是**
 
