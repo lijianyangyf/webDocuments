@@ -66,6 +66,7 @@
 - **token附在请求报文的authorization字段**
 - **需要token的接口：** 若token有问题，则在code字段返回998
 - **不需要token的接口：** 正常返回即可
+- **所有的需要token的接口，都会在请求成功后的data字段中加上token字段，以更新token**
 
 
 
