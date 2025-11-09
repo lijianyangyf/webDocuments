@@ -97,8 +97,9 @@
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
-      "newPassword": "string (mutipart/formdata)",
-      "token": "string (mutipart/formdata)"
+      "password":"string",
+      "newPassword": "string",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {

@@ -176,7 +176,7 @@
 
 	string nickName,
 
-	avatar(传图片,限制jpg格式，3MB一张图片),
+	avatar(传图片,限制jpg和png格式，3MB一张图片),
 
 - **响应格式（成功）：**
 
