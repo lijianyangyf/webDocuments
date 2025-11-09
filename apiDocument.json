@@ -5,10 +5,15 @@
     "apiUrl": "/api/checkToken",
     "apiType": "GET",
     "needToken": "True",
-    "InputStructure": {},
+    "InputStructure": {
+      "token": "string"
+    },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "998 (int)"
@@ -23,7 +28,8 @@
     "needToken": "False",
     "InputStructure": {
       "userName": "string",
-      "password": "string"
+      "password": "string",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
@@ -47,7 +53,8 @@
     "InputStructure": {
       "userName": "string",
       "nickName": "string",
-      "password": "string"
+      "password": "string",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
@@ -67,11 +74,15 @@
     "needToken": "True",
     "InputStructure": {
       "nickName": "string (mutipart/formdata)",
-      "avatar": "file (mutipart/formdata)"
+      "avatar": "file (mutipart/formdata)",
+      "token": "string (mutipart/formdata)"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
@@ -86,11 +97,15 @@
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
-      "newPassword": "string (mutipart/formdata)"
+      "newPassword": "string (mutipart/formdata)",
+      "token": "string (mutipart/formdata)"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
@@ -104,14 +119,17 @@
     "apiUrl": "/api/user/getInfo",
     "apiType": "GET",
     "needToken": "True",
-    "InputStructure": {},
+    "InputStructure": {
+      "token": "string"
+    },
     "OutputStructure": {
       "Success": {
         "code": "200 (int)",
         "data": {
           "userName": "string",
           "nickName": "string",
-          "avatarUrl": "string"
+          "avatarUrl": "string",
+          "token": "string"
         }
       },
       "Failure": {
@@ -128,7 +146,8 @@
     "needToken": "True",
     "InputStructure": {
       "numPerPage": "string (query)",
-      "pageIndex": "string (query)"
+      "pageIndex": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
@@ -149,7 +168,8 @@
             }
           ],
           "totalPageNum": "int",
-          "pageIndex": "int"
+          "pageIndex": "int",
+          "token": "string"
         }
       },
       "Failure": {
@@ -165,11 +185,15 @@
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
-      "commentID": "string (query)"
+      "commentID": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
@@ -188,7 +212,8 @@
       "canteen": "string (query)",
       "collation": "string (query)",
       "numPerPage": "string (query)",
-      "pageIndex": "string (query)"
+      "pageIndex": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
@@ -206,7 +231,8 @@
             }
           ],
           "totalPageNum": "int",
-          "pageIndex": "int"
+          "pageIndex": "int",
+          "token": "string"
         }
       },
       "Failure": {
@@ -222,7 +248,8 @@
     "apiType": "GET",
     "needToken": "True",
     "InputStructure": {
-      "stallID": "string (query)"
+      "stallID": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
@@ -258,7 +285,8 @@
               "picture2Url": "string",
               "picture3Url": "string"
             }
-          ]
+          ],
+          "token": "string"
         }
       },
       "Failure": {
@@ -276,7 +304,8 @@
     "InputStructure": {
       "stallID": "string (query)",
       "numPerPage": "string (query)",
-      "pageIndex": "string (query)"
+      "pageIndex": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
@@ -297,7 +326,8 @@
             }
           ],
           "totalPageNum": "int",
-          "pageIndex": "int"
+          "pageIndex": "int",
+          "token": "string"
         }
       },
       "Failure": {
@@ -318,11 +348,15 @@
       "content": "string",
       "pictrue1Url": "string",
       "picture2Url": "string",
-      "picture3Url": "string"
+      "picture3Url": "string",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
@@ -338,11 +372,15 @@
     "needToken": "True",
     "InputStructure": {
       "commentID": "int",
-      "newEvaluation": "string ('like' or 'none')"
+      "newEvaluation": "string ('like' or 'none')",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
@@ -357,7 +395,8 @@
     "apiType": "GET",
     "needToken": "True",
     "InputStructure": {
-      "stallID": "string (query)"
+      "stallID": "string (query)",
+      "token": "string (query)"
     },
     "OutputStructure": {
       "Success": {
@@ -373,7 +412,8 @@
               "pictureUrl": "string",
               "evaluation": "string ('like', 'bad', or 'none')"
             }
-          ]
+          ],
+          "token": "string"
         }
       },
       "Failure": {
@@ -390,11 +430,15 @@
     "needToken": "True",
     "InputStructure": {
       "dishID": "int",
-      "newEvaluation": "string ('like', 'bad', or 'none')"
+      "newEvaluation": "string ('like', 'bad', or 'none')",
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
-        "code": "200 (int)"
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
       },
       "Failure": {
         "code": "999 (int)",
