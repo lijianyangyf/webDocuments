@@ -361,7 +361,7 @@
 
 ​	canteen(饭堂，默认为 "default")
 
-​	collation(排序规则:"ascend","descend","default")
+​	collation(排序规则按照评分:"ascend","descend","default")
 
 ​	numPerPage(每页多少个)
 
