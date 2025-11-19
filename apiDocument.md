@@ -347,21 +347,23 @@
 
 **type详细说明(用中文传输)：**
 
-烧腊,汉堡,粉面,自选,烩饭
+烧腊,汉堡,粉面,自选,烩饭,default
 
 **canteen详细说明**
 
-榕园食堂，荔园食堂，槿园食堂，若海食堂
+榕园食堂，荔园食堂，槿园食堂，若海食堂,default
 
 
 
 
 
-​	type(类型：烧腊、汉堡， 默认为"default")
+​	type(类型：烧腊、汉堡， 默认为"全部")
 
-​	canteen(饭堂，默认为 "default")
+​	canteen(饭堂，默认为 "全部")
 
-​	collation(排序规则按照评分:"ascend","descend","default")
+​	orderBy(按照哪个进行排序:price,rating,default)
+
+​	collation(排序规则默认按照评分:"ascend","descend","default")
 
 ​	numPerPage(每页多少个)
 
