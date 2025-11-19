@@ -345,13 +345,13 @@
 - **类型:get**
 - **请求格式(写在查询字符串里面,解析成json时字段类型为string)：**
 
-**type详细说明（统一用英文传，用中文渲染）：**
+**type详细说明(用中文传输)：**
 
-roastMeat(烧腊),Hamburger(汉堡),noodles(粉面),selfSelected(自选),cookRice(烩饭)
+烧腊,汉堡,粉面,自选,烩饭
 
 **canteen详细说明**
 
-rongYuan(榕园),liYuan(荔园),jinYuan(槿园),ruoHai(若海)
+榕园食堂，荔园食堂，槿园食堂，若海食堂
 
 
 
