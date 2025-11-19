@@ -345,6 +345,18 @@
 - **类型:get**
 - **请求格式(写在查询字符串里面,解析成json时字段类型为string)：**
 
+**type详细说明（统一用英文传，用中文渲染）：**
+
+roastMeat(烧腊),Hamburger(汉堡),noodles(粉面),selfSelected(自选),cookRice(烩饭)
+
+**canteen详细说明**
+
+rongYuan(榕园),liYuan(荔园),jinYuan(槿园),ruoHai(若海)
+
+
+
+
+
 ​	type(类型：烧腊、汉堡， 默认为"default")
 
 ​	canteen(饭堂，默认为 "default")
