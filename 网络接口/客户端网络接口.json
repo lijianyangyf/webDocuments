@@ -28,8 +28,7 @@
     "needToken": "False",
     "InputStructure": {
       "userName": "string",
-      "password": "string",
-      "token": "string"
+      "password": "string"
     },
     "OutputStructure": {
       "Success": {
@@ -53,8 +52,7 @@
     "InputStructure": {
       "userName": "string",
       "nickName": "string",
-      "password": "string",
-      "token": "string"
+      "password": "string"
     },
     "OutputStructure": {
       "Success": {
@@ -75,7 +73,7 @@
     "InputStructure": {
       "nickName": "string (mutipart/formdata)",
       "avatar": "file (mutipart/formdata)",
-      "token": "string (mutipart/formdata)"
+      "token": "string"
     },
     "OutputStructure": {
       "Success": {
@@ -97,7 +95,7 @@
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
-      "password":"string",
+      "password": "string",
       "newPassword": "string",
       "token": "string"
     },
@@ -158,7 +156,7 @@
             {
               "ID": "int",
               "stallName": "string",
-              "canteent": "string",
+              "canteen": "string",
               "dateTime": "string",
               "rating": "float",
               "like": "int",
@@ -211,6 +209,7 @@
     "InputStructure": {
       "type": "string (query)",
       "canteen": "string (query)",
+      "orderBy": "string (query)",
       "collation": "string (query)",
       "numPerPage": "string (query)",
       "pageIndex": "string (query)",
@@ -226,7 +225,7 @@
               "name": "string",
               "rating": "float",
               "meanPrice": "float",
-              "canteent": "string",
+              "canteen": "string",
               "signatureDish": "string",
               "pictureUrl": "string"
             }
@@ -261,7 +260,7 @@
           "rating": "float",
           "meanPrice": "float",
           "introduction": "string",
-          "canteent": "string",
+          "canteen": "string",
           "signatureDish": "string",
           "pictureUrl": "string",
           "dishList": [
@@ -270,7 +269,7 @@
               "name": "string",
               "price": "float",
               "rating": "float",
-              "pictrueUrl": "string"
+              "pictureUrl": "string"
             }
           ],
           "commentList": [
@@ -439,6 +438,502 @@
         "code": "200 (int)",
         "data": {
           "token": "string"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "16",
+    "apiName": "后台-Token验证",
+    "apiUrl": "/api/background/checkToken",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "997 (int)"
+      }
+    }
+  },
+  {
+    "apiID": "17",
+    "apiName": "后台-管理员登陆",
+    "apiUrl": "/api/background/admin/login",
+    "apiType": "POST",
+    "needToken": "False",
+    "InputStructure": {
+      "ID": "string",
+      "password": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "token": "string"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "用户不存在|密码错误 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "18",
+    "apiName": "后台-管理员信息修改",
+    "apiUrl": "/api/background/admin/editInfo",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "name": "string (mutipart/formdata)",
+      "avatar": "file (mutipart/formdata)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "19",
+    "apiName": "后台-管理员修改密码",
+    "apiUrl": "/api/background/admin/editPassword",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "password": "string",
+      "newPassword": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "20",
+    "apiName": "后台-获取管理员信息",
+    "apiUrl": "/api/background/admin/getInfo",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "ID": "string",
+          "name": "string",
+          "permission": "string",
+          "avatarUrl": "string"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "21",
+    "apiName": "后台-获取用户信息",
+    "apiUrl": "/api/background/user/getUserList",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "userName": "string (query)",
+      "nickName": "string (query)",
+      "status": "string (query)",
+      "numPerPage": "int (query)",
+      "pageIndex": "int (query)",
+      "token": "string (query)"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "userList": [
+            {
+              "userName": "string",
+              "nickName": "string",
+              "status": "string",
+              "avatarUrl": "string"
+            }
+          ],
+          "totalPageNum": "int",
+          "pageIndex": "int"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)"
+      }
+    }
+  },
+  {
+    "apiID": "22",
+    "apiName": "后台-重置用户密码",
+    "apiUrl": "/api/background/user/retSetPassword",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "userName": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "class": {
+          "newPassword": "string"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "23",
+    "apiName": "后台-冻结用户账号",
+    "apiUrl": "/api/background/user/freezeAccount",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "userName": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "24",
+    "apiName": "后台-获取档口列表",
+    "apiUrl": "/api/background/food/getStallList",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "name": "string (query)",
+      "type": "string (query)",
+      "canteen": "string (query)",
+      "numPerPage": "string (query)",
+      "pageIndex": "string (query)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "stallList": [
+            {
+              "ID": "int",
+              "name": "string",
+              "rating": "float",
+              "meanPrice": "float",
+              "canteen": "string",
+              "signatureDish": "string",
+              "pictureUrl": "string"
+            }
+          ],
+          "totalPageNum": "int",
+          "pageIndex": "int"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "25",
+    "apiName": "后台-新增档口",
+    "apiUrl": "/api/background/food/addStall",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "name": "string (mutipart/formdata)",
+      "type": "string (mutipart/formdata)",
+      "canteen": "string (mutipart/formdata)",
+      "introduction": "string (mutipart/formdata)",
+      "picture": "file (mutipart/formdata)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "26",
+    "apiName": "后台-修改档口信息",
+    "apiUrl": "/api/background/food/editStallInfo",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "int (mutipart/formdata)",
+      "name": "string (mutipart/formdata)",
+      "type": "string (mutipart/formdata)",
+      "canteen": "string (mutipart/formdata)",
+      "introduction": "string (mutipart/formdata)",
+      "picture": "file (mutipart/formdata)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "27",
+    "apiName": "后台-删除档口",
+    "apiUrl": "/api/background/food/deleteStall",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "int",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "28",
+    "apiName": "后台-获取全部菜品列表",
+    "apiUrl": "/api/background/dish/getDishList",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "stallID": "string (query)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "dishList": [
+            {
+              "ID": "int",
+              "name": "string",
+              "price": "float",
+              "like": "int",
+              "bad": "int",
+              "pictureUrl": "string"
+            }
+          ]
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "29",
+    "apiName": "后台-新增菜品",
+    "apiUrl": "/api/background/dish/addDish",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "stallID": "int (mutipart/formdata)",
+      "name": "string (mutipart/formdata)",
+      "price": "string (mutipart/formdata)",
+      "picture": "file (mutipart/formdata)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "30",
+    "apiName": "后台-编辑菜品",
+    "apiUrl": "/api/background/dish/editDishInfo",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "int (mutipart/formdata)",
+      "name": "string (mutipart/formdata)",
+      "price": "string (mutipart/formdata)",
+      "picture": "file (mutipart/formdata)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "31",
+    "apiName": "后台-删除菜品",
+    "apiUrl": "/api/background/dish/deleteDish",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "int",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "32",
+    "apiName": "后台-获取管理员列表",
+    "apiUrl": "/api/background/adminManage/getAdminList",
+    "apiType": "GET",
+    "needToken": "True",
+    "InputStructure": {
+      "adminID": "string (query)",
+      "name": "string (query)",
+      "permission": "string (query)",
+      "numPerPage": "string (query)",
+      "pageIndex": "string (query)",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "adminList": [
+            {
+              "ID": "string",
+              "name": "string",
+              "permission": "string",
+              "avatarUrl": "string"
+            }
+          ],
+          "totalPageNum": "int",
+          "pageIndex": "int"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "33",
+    "apiName": "后台-重置管理员密码",
+    "apiUrl": "/api/background/adminManage/resetPassword",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "newPassword": "string"
+        }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "34",
+    "apiName": "后台-删除管理员",
+    "apiUrl": "/api/background/adminManage/deleteAdmin",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "ID": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "35",
+    "apiName": "后台-新增管理员",
+    "apiUrl": "/api/background/adminManage/addAdmin",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "name": "string",
+      "token": "string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)",
+        "data": {
+          "ID": "string",
+          "password": "string"
         }
       },
       "Failure": {
