@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS DishEvaluation (
 
 -- 7. 管理员表 (Admin)
 CREATE TABLE IF NOT EXISTS Admin (
-    account int NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '账号，主键',
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '账号，主键',
     password varchar(255) NOT NULL,
     name varchar(255) NOT NULL COMMENT '姓名',
     authority enum('超级管理员', '普通管理员') NOT NULL COMMENT '权限',
