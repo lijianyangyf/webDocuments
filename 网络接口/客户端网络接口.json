@@ -161,7 +161,7 @@
               "rating": "float",
               "like": "int",
               "content": "string",
-              "pictrue1Url": "string",
+              "picture1Url": "string",
               "picture2Url": "string",
               "picture3Url": "string"
             }
@@ -283,7 +283,7 @@
               "like": "int",
               "string":"evaluation",
               "content": "string",
-              "pictrue1Url": "string",
+              "picture1Url": "string",
               "picture2Url": "string",
               "picture3Url": "string"
             }
@@ -321,9 +321,9 @@
               "dateTime": "string",
               "rating": "float",
               "like": "int",
-              "string":"evaluation",
+              "evaluation":"string",
               "content": "string",
-              "pictrue1Url": "string",
+              "picture1Url": "string",
               "picture2Url": "string",
               "picture3Url": "string"
             }
@@ -349,7 +349,7 @@
       "stallID": "int(mutipart/formdata)",
       "rating": "int(mutipart/formdata)",
       "content": "string(mutipart/formdata)",
-      "pictrue1Url": "string(mutipart/formdata)",
+      "picture1Url": "string(mutipart/formdata)",
       "picture2Url": "string(mutipart/formdata)",
       "picture3Url": "string(mutipart/formdata)",
       "token": "string"
@@ -596,7 +596,7 @@
   {
     "apiID": "22",
     "apiName": "后台-重置用户密码",
-    "apiUrl": "/api/background/user/retSetPassword",
+    "apiUrl": "/api/background/user/resetPassword",
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
