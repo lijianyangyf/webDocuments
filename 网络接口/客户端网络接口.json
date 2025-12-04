@@ -662,7 +662,9 @@
               "meanPrice": "float",
               "canteen": "string",
               "signatureDish": "string",
-              "pictureUrl": "string"
+              "pictureUrl": "string",
+              "instroduction": "string",
+              "type": "string"
             }
           ],
           "totalPageNum": "int",
