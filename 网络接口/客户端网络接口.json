@@ -225,6 +225,7 @@
               "name": "string",
               "rating": "float",
               "meanPrice": "float",
+              "type": "string",
               "canteen": "string",
               "signatureDish": "string",
               "pictureUrl": "string"
@@ -345,12 +346,12 @@
     "apiType": "POST",
     "needToken": "True",
     "InputStructure": {
-      "stallID": "int",
-      "rating": "int",
-      "content": "string",
-      "pictrue1Url": "string",
-      "picture2Url": "string",
-      "picture3Url": "string",
+      "stallID": "int(mutipart/formdata)",
+      "rating": "int(mutipart/formdata)",
+      "content": "string(mutipart/formdata)",
+      "pictrue1Url": "string(mutipart/formdata)",
+      "picture2Url": "string(mutipart/formdata)",
+      "picture3Url": "string(mutipart/formdata)",
       "token": "string"
     },
     "OutputStructure": {
@@ -937,6 +938,26 @@
           "ID": "string",
           "password": "string"
         }
+      },
+      "Failure": {
+        "code": "999 (int)",
+        "msg": "后端可自由决定 (string)"
+      }
+    }
+  },
+  {
+    "apiID": "36",
+    "apiName": "后台-解冻用户账号",
+    "apiUrl": "/api/background/user/defrostAccount",
+    "apiType": "POST",
+    "needToken": "True",
+    "InputStructure": {
+      "userName":"string",
+      "token":"string"
+    },
+    "OutputStructure": {
+      "Success": {
+        "code": "200 (int)"
       },
       "Failure": {
         "code": "999 (int)",
