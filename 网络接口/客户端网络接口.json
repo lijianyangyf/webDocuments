@@ -591,7 +591,8 @@
       "Failure": {
         "code": "999 (int)"
       }
-    }
+    },
+    "ps":"userName和nickName采用模糊查询,比如userName=abc,就返回userName中包含abc的所有用户,即*abc*"
   },
   {
     "apiID": "22",
@@ -878,6 +879,10 @@
         "code": "999 (int)",
         "msg": "后端可自由决定 (string)"
       }
+    },
+    "ps":{
+      "ps1":"name采用模糊查询",
+      "ps2":"permission可选普通管理员、超级管理员和全部"
     }
   },
   {
@@ -931,7 +936,8 @@
     "needToken": "True",
     "InputStructure": {
       "name": "string",
-      "token": "string"
+      "token": "string",
+      "permission": "string"
     },
     "OutputStructure": {
       "Success": {
